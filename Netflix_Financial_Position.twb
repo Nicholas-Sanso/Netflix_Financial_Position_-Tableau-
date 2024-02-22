@@ -1,0 +1,2521 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20224.22.1117.1841                               -->
+<workbook original-version='18.1' source-build='2022.4.0 (20224.22.1117.1841)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <ParameterAction />
+    <_.fcp.ParameterActionClearSelection.true...ParameterActionClearSelection />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <_.fcp.MarkAnimation.true...style-rule element='animation'>
+      <format attr='animation-style' value='as-phased' />
+      <format attr='animation-duration' value='0.5' />
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.MarkAnimation.true...style-rule>
+  </style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Change in Cash' caption='Groups' datatype='string' name='[Parameter 1 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Change in cash&quot;'>
+        <calculation class='tableau' formula='&quot;Change in cash&quot;' />
+        <aliases>
+          <alias key='&quot;Change in cash&quot;' value='Change in Cash' />
+        </aliases>
+        <members>
+          <member value='&quot;CFI, CFO, CFF&quot;' />
+          <member value='&quot;Line Items&quot;' />
+          <member alias='Change in Cash' value='&quot;Change in cash&quot;' />
+        </members>
+      </column>
+      <column caption='Select Measure Parameter' datatype='string' name='[Parameter 1 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Paid net membership additions&quot;'>
+        <calculation class='tableau' formula='&quot;Paid net membership additions&quot;' />
+        <members>
+          <member value='&quot;Revenues&quot;' />
+          <member value='&quot;Paid net membership additions&quot;' />
+          <member value='&quot;Paid memberships at end of period&quot;' />
+        </members>
+      </column>
+      <column caption='Drill Down Level' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+        <calculation class='tableau' formula='3' />
+        <range max='3' min='1' />
+      </column>
+      <column caption='Change Between Sheets' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Sheet1 &quot;'>
+        <calculation class='tableau' formula='&quot;Sheet1 &quot;' />
+        <members>
+          <member value='&quot;Sheet1 &quot;' />
+          <member value='&quot;Sheet2&quot;' />
+          <member value='&quot;Sheet3&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='Maturity of Debt (Power Bi Deposit 2)' inline='true' name='federated.1r40dkf0kkz08u17e3gss14e8nuc' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Power Bi Deposit 2' name='excel-direct.03cjb6801q0dez1h4b2b81w9q782'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/nicholassanso/Downloads/Tableau/Power Bi Deposit 2.xls' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.03cjb6801q0dez1h4b2b81w9q782' name='Maturity of Debt' table='[&apos;Maturity of Debt$&apos;]' type='table'>
+          <columns gridOrigin='B1:N17:no:B1:N17:0' header='yes' outcome='2'>
+            <column datatype='real' name='Stated Interest' ordinal='0' />
+            <column datatype='integer' name='Par Value' ordinal='1' />
+            <column datatype='string' name='Issuance Month' ordinal='2' />
+            <column datatype='integer' name='Issuance Year' ordinal='3' />
+            <column datatype='date' date-parse-format='MMMM yyyy' name='Issuance' ordinal='4' />
+            <column datatype='string' name='Maturity Month' ordinal='5' />
+            <column datatype='integer' name='Maturity Year' ordinal='6' />
+            <column datatype='date' date-parse-format='MMMM yyyy' name='Maturity' ordinal='7' />
+            <column datatype='integer' name='Fair Value' ordinal='8' />
+            <column datatype='real' name='Risk Free Interest Rate' ordinal='9' />
+            <column datatype='real' name='BBB US Corporate Effective Yield' ordinal='10' />
+            <column datatype='integer' name='Proceeds from Sale of Debt' ordinal='11' />
+            <column datatype='integer' name='Discount or Premium' ordinal='12' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.03cjb6801q0dez1h4b2b81w9q782' name='Maturity of Debt' table='[&apos;Maturity of Debt$&apos;]' type='table'>
+          <columns gridOrigin='B1:N17:no:B1:N17:0' header='yes' outcome='2'>
+            <column datatype='real' name='Stated Interest' ordinal='0' />
+            <column datatype='integer' name='Par Value' ordinal='1' />
+            <column datatype='string' name='Issuance Month' ordinal='2' />
+            <column datatype='integer' name='Issuance Year' ordinal='3' />
+            <column datatype='date' date-parse-format='MMMM yyyy' name='Issuance' ordinal='4' />
+            <column datatype='string' name='Maturity Month' ordinal='5' />
+            <column datatype='integer' name='Maturity Year' ordinal='6' />
+            <column datatype='date' date-parse-format='MMMM yyyy' name='Maturity' ordinal='7' />
+            <column datatype='integer' name='Fair Value' ordinal='8' />
+            <column datatype='real' name='Risk Free Interest Rate' ordinal='9' />
+            <column datatype='real' name='BBB US Corporate Effective Yield' ordinal='10' />
+            <column datatype='integer' name='Proceeds from Sale of Debt' ordinal='11' />
+            <column datatype='integer' name='Discount or Premium' ordinal='12' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;B1:N17:no:B1:N17:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Stated Interest</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Stated Interest]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Stated Interest</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Par Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Par Value]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Par Value</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Issuance Month</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Issuance Month]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Issuance Month</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Issuance Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Issuance Year]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Issuance Year</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Issuance</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Issuance]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Issuance</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maturity Month</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Maturity Month]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Maturity Month</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maturity Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Maturity Year]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Maturity Year</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maturity</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Maturity]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Maturity</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fair Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fair Value]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Fair Value</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Risk Free Interest Rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Risk Free Interest Rate]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Risk Free Interest Rate</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BBB US Corporate Effective Yield</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[BBB US Corporate Effective Yield]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>BBB US Corporate Effective Yield</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Proceeds from Sale of Debt</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Proceeds from Sale of Debt]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Proceeds from Sale of Debt</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Discount or Premium</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Discount or Premium]</local-name>
+            <parent-name>[Maturity of Debt]</parent-name>
+            <remote-alias>Discount or Premium</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Stated - BBB' datatype='real' name='[Calculation_1138847765996351488]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Stated Interest]-[BBB US Corporate Effective Yield]' />
+      </column>
+      <column caption='FV/Par Value' datatype='real' name='[Calculation_1138847765996515329]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Fair Value]/[Par Value]' />
+      </column>
+      <column datatype='integer' name='[Issuance Year]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[Maturity Year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Maturity of Debt' datatype='table' name='[__tableau_internal_object_id__].[Maturity of Debt_B5B088D22DB74A098E982F80266A1144]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Maturity of Debt' id='Maturity of Debt_B5B088D22DB74A098E982F80266A1144'>
+            <properties context=''>
+              <relation connection='excel-direct.03cjb6801q0dez1h4b2b81w9q782' name='Maturity of Debt' table='[&apos;Maturity of Debt$&apos;]' type='table'>
+                <columns gridOrigin='B1:N17:no:B1:N17:0' header='yes' outcome='2'>
+                  <column datatype='real' name='Stated Interest' ordinal='0' />
+                  <column datatype='integer' name='Par Value' ordinal='1' />
+                  <column datatype='string' name='Issuance Month' ordinal='2' />
+                  <column datatype='integer' name='Issuance Year' ordinal='3' />
+                  <column datatype='date' date-parse-format='MMMM yyyy' name='Issuance' ordinal='4' />
+                  <column datatype='string' name='Maturity Month' ordinal='5' />
+                  <column datatype='integer' name='Maturity Year' ordinal='6' />
+                  <column datatype='date' date-parse-format='MMMM yyyy' name='Maturity' ordinal='7' />
+                  <column datatype='integer' name='Fair Value' ordinal='8' />
+                  <column datatype='real' name='Risk Free Interest Rate' ordinal='9' />
+                  <column datatype='real' name='BBB US Corporate Effective Yield' ordinal='10' />
+                  <column datatype='integer' name='Proceeds from Sale of Debt' ordinal='11' />
+                  <column datatype='integer' name='Discount or Premium' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='BS ALL  (Power Bi Deposit 2)' inline='true' name='federated.1xy0ikj1pvf15s1chgwza1hohobx' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Power Bi Deposit 2' name='excel-direct.13za6bf1stmje511l89gb01cm0t9'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/nicholassanso/Downloads/Tableau/Power Bi Deposit 2.xls' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.13za6bf1stmje511l89gb01cm0t9' name='BS ALL ' table='[&apos;BS ALL $&apos;]' type='table'>
+          <columns gridOrigin='A1:I23:no:A1:I23:0' header='yes' outcome='2'>
+            <column datatype='integer' name='Liquidity Number' ordinal='0' />
+            <column datatype='string' name='Type Specific' ordinal='1' />
+            <column datatype='string' name='Type' ordinal='2' />
+            <column datatype='string' name='Line Item' ordinal='3' />
+            <column datatype='integer' name='Q1 2021' ordinal='4' />
+            <column datatype='integer' name='Q2 2021' ordinal='5' />
+            <column datatype='integer' name='Q3 2021' ordinal='6' />
+            <column datatype='integer' name='Q4 2022' ordinal='7' />
+            <column datatype='real' name='Percentage Change over 2021' ordinal='8' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.13za6bf1stmje511l89gb01cm0t9' name='BS ALL ' table='[&apos;BS ALL $&apos;]' type='table'>
+          <columns gridOrigin='A1:I23:no:A1:I23:0' header='yes' outcome='2'>
+            <column datatype='integer' name='Liquidity Number' ordinal='0' />
+            <column datatype='string' name='Type Specific' ordinal='1' />
+            <column datatype='string' name='Type' ordinal='2' />
+            <column datatype='string' name='Line Item' ordinal='3' />
+            <column datatype='integer' name='Q1 2021' ordinal='4' />
+            <column datatype='integer' name='Q2 2021' ordinal='5' />
+            <column datatype='integer' name='Q3 2021' ordinal='6' />
+            <column datatype='integer' name='Q4 2022' ordinal='7' />
+            <column datatype='real' name='Percentage Change over 2021' ordinal='8' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:I23:no:A1:I23:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Liquidity Number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Liquidity Number]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Liquidity Number</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type Specific</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Type Specific]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Type Specific</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Type]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Line Item</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Line Item]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Line Item</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q1 2021</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q1 2021]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Q1 2021</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q2 2021</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q2 2021]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Q2 2021</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q3 2021</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q3 2021]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Q3 2021</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q4 2022</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q4 2022]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Q4 2022</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Percentage Change over 2021</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Percentage Change over 2021]</local-name>
+            <parent-name>[BS ALL ]</parent-name>
+            <remote-alias>Percentage Change over 2021</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Drill Down Labels' datatype='string' name='[Calculation_2227311498033311744]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] =1 THEN [Type]&#13;&#10;ELSEIF   [Parameters].[Parameter 1] = 2 THEN  [Type Specific]&#13;&#10;ELSEIF  [Parameters].[Parameter 1] = 3 THEN [Line Item]&#13;&#10;END' />
+      </column>
+      <column caption='Drill Down Calc' datatype='integer' name='[Calculation_2227311498035593217]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1]= 1 THEN 2 &#13;&#10;ELSEIF [Parameters].[Parameter 1]= 2 THEN 3 &#13;&#10;ELSEIF [Parameters].[Parameter 1] =3 THEN 1&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column datatype='integer' name='[Liquidity Number]' role='dimension' type='ordinal' />
+      <column caption='Q4 2021' datatype='integer' name='[Q4 2022]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='BS ALL ' datatype='table' name='[__tableau_internal_object_id__].[BS ALL _28A587E58A874B8F92BFB74ADD7DA835]' role='measure' type='quantitative' />
+      <column-instance column='[Liquidity Number]' derivation='None' name='[none:Liquidity Number:ok]' pivot='key' type='ordinal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='ordinal' measure-ordering='ordinal' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Liquidity Number:ok]' palette='green_gold_10_0' type='palette'>
+            <map to='#146c36'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#439350'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#8eb858'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#f4d166'>
+              <bucket>1</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Drill Down Level' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+          <range max='3' min='1' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='BS ALL ' id='BS ALL _28A587E58A874B8F92BFB74ADD7DA835'>
+            <properties context=''>
+              <relation connection='excel-direct.13za6bf1stmje511l89gb01cm0t9' name='BS ALL ' table='[&apos;BS ALL $&apos;]' type='table'>
+                <columns gridOrigin='A1:I23:no:A1:I23:0' header='yes' outcome='2'>
+                  <column datatype='integer' name='Liquidity Number' ordinal='0' />
+                  <column datatype='string' name='Type Specific' ordinal='1' />
+                  <column datatype='string' name='Type' ordinal='2' />
+                  <column datatype='string' name='Line Item' ordinal='3' />
+                  <column datatype='integer' name='Q1 2021' ordinal='4' />
+                  <column datatype='integer' name='Q2 2021' ordinal='5' />
+                  <column datatype='integer' name='Q3 2021' ordinal='6' />
+                  <column datatype='integer' name='Q4 2022' ordinal='7' />
+                  <column datatype='real' name='Percentage Change over 2021' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='Membership (Power Bi Deposit 2)' inline='true' name='federated.1g4hxt40dm5rme15f4d6i1bhi99u' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Power Bi Deposit 2' name='excel-direct.0rc81ut0wbchqi1b8mpsz0exovyf'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/nicholassanso/Downloads/Tableau/Power Bi Deposit 2.xls' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.0rc81ut0wbchqi1b8mpsz0exovyf' name='Membership' table='[Membership$]' type='table'>
+          <columns gridOrigin='A1:F33:no:A1:F33:0' header='yes' outcome='2'>
+            <column datatype='string' name='Region' ordinal='0' />
+            <column datatype='integer' name='Revenues' ordinal='1' />
+            <column datatype='integer' name='Paid memberships at end of period' ordinal='2' />
+            <column datatype='integer' name='Paid net membership additions' ordinal='3' />
+            <column datatype='date' name='Quarter' ordinal='4' />
+            <column datatype='real' name='Q/Q Rev Growth' ordinal='5' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.0rc81ut0wbchqi1b8mpsz0exovyf' name='Membership' table='[Membership$]' type='table'>
+          <columns gridOrigin='A1:F33:no:A1:F33:0' header='yes' outcome='2'>
+            <column datatype='string' name='Region' ordinal='0' />
+            <column datatype='integer' name='Revenues' ordinal='1' />
+            <column datatype='integer' name='Paid memberships at end of period' ordinal='2' />
+            <column datatype='integer' name='Paid net membership additions' ordinal='3' />
+            <column datatype='date' name='Quarter' ordinal='4' />
+            <column datatype='real' name='Q/Q Rev Growth' ordinal='5' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Membership]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:F33:no:A1:F33:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Membership]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Revenues</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Revenues]</local-name>
+            <parent-name>[Membership]</parent-name>
+            <remote-alias>Revenues</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Paid memberships at end of period</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Paid memberships at end of period]</local-name>
+            <parent-name>[Membership]</parent-name>
+            <remote-alias>Paid memberships at end of period</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Paid net membership additions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Paid net membership additions]</local-name>
+            <parent-name>[Membership]</parent-name>
+            <remote-alias>Paid net membership additions</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quarter</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Quarter]</local-name>
+            <parent-name>[Membership]</parent-name>
+            <remote-alias>Quarter</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q/Q Rev Growth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Q/Q Rev Growth]</local-name>
+            <parent-name>[Membership]</parent-name>
+            <remote-alias>Q/Q Rev Growth</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Select Measure' datatype='integer' name='[Calculation_1968917470894698496]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 1 2]&#13;&#10;&#13;&#10;WHEN &quot;Revenues&quot; THEN SUM([Revenues])&#13;&#10;WHEN  &quot;Paid net membership additions&quot; THEN sum([Paid net membership additions])&#13;&#10;WHEN &quot;Paid memberships at end of period&quot;  THEN SUM([Paid memberships at end of period])&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Change sheet Calculated Field' datatype='string' name='[Calculation_1968917470917447682]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+      </column>
+      <column datatype='date' name='[Quarter]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Membership' datatype='table' name='[__tableau_internal_object_id__].[Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550]' role='measure' type='quantitative' />
+      <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Quarter]' derivation='Year' name='[yr:Quarter:ok]' pivot='key' type='ordinal' />
+      <group hidden='true' name='[Inclusions (Region,YEAR(Quarter))]' name-style='unqualified' user:auto-column='include'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Region:nk]' />
+          <groupfilter function='level-members' level='[yr:Quarter:ok]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Region:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Asia-Pacific (APAC)&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;United States and Canada (UCAN)&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Latin America (LATAM)&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Europe, Middle East, and Africa (EMEA)&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Measure Parameter' datatype='string' name='[Parameter 1 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Paid net membership additions&quot;'>
+          <calculation class='tableau' formula='&quot;Paid net membership additions&quot;' />
+        </column>
+        <column caption='Change Between Sheets' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Sheet1 &quot;'>
+          <calculation class='tableau' formula='&quot;Sheet1 &quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Membership' id='Membership_1B68F7BF5BF44ADBB1C8E0AF3C389550'>
+            <properties context=''>
+              <relation connection='excel-direct.0rc81ut0wbchqi1b8mpsz0exovyf' name='Membership' table='[Membership$]' type='table'>
+                <columns gridOrigin='A1:F33:no:A1:F33:0' header='yes' outcome='2'>
+                  <column datatype='string' name='Region' ordinal='0' />
+                  <column datatype='integer' name='Revenues' ordinal='1' />
+                  <column datatype='integer' name='Paid memberships at end of period' ordinal='2' />
+                  <column datatype='integer' name='Paid net membership additions' ordinal='3' />
+                  <column datatype='date' name='Quarter' ordinal='4' />
+                  <column datatype='real' name='Q/Q Rev Growth' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='CF All (Power Bi Deposit 2)' inline='true' name='federated.0qfzd0f0z0kvgi111k6191wwzhvq' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Power Bi Deposit 2' name='excel-direct.1iy83bs1rxpj2m0zwo5j70rwk86b'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/nicholassanso/Downloads/Tableau/Power Bi Deposit 2.xls' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.1iy83bs1rxpj2m0zwo5j70rwk86b' name='CF All' table='[&apos;CF All$&apos;]' type='table'>
+          <columns gridOrigin='A1:I27:no:A1:I27:0' header='yes' outcome='2'>
+            <column datatype='string' name='Op vs Nonop Cash Flows' ordinal='0' />
+            <column datatype='string' name='Cash Flow Type' ordinal='1' />
+            <column datatype='string' name='Line Item' ordinal='2' />
+            <column datatype='integer' name='Q4' ordinal='3' />
+            <column datatype='integer' name='Q3' ordinal='4' />
+            <column datatype='integer' name='Q2' ordinal='5' />
+            <column datatype='integer' name='Q1' ordinal='6' />
+            <column datatype='integer' name='Full Year' ordinal='7' />
+            <column datatype='integer' name='Q1+Q2+Q3' ordinal='8' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.1iy83bs1rxpj2m0zwo5j70rwk86b' name='CF All' table='[&apos;CF All$&apos;]' type='table'>
+          <columns gridOrigin='A1:I27:no:A1:I27:0' header='yes' outcome='2'>
+            <column datatype='string' name='Op vs Nonop Cash Flows' ordinal='0' />
+            <column datatype='string' name='Cash Flow Type' ordinal='1' />
+            <column datatype='string' name='Line Item' ordinal='2' />
+            <column datatype='integer' name='Q4' ordinal='3' />
+            <column datatype='integer' name='Q3' ordinal='4' />
+            <column datatype='integer' name='Q2' ordinal='5' />
+            <column datatype='integer' name='Q1' ordinal='6' />
+            <column datatype='integer' name='Full Year' ordinal='7' />
+            <column datatype='integer' name='Q1+Q2+Q3' ordinal='8' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:I27:no:A1:I27:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Op vs Nonop Cash Flows</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Op vs Nonop Cash Flows]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Op vs Nonop Cash Flows</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cash Flow Type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Cash Flow Type]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Cash Flow Type</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Line Item</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Line Item]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Line Item</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q4</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q4]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Q4</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q3</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q3]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Q3</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q2]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Q2</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q1]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Q1</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Full Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Full Year]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Full Year</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q1+Q2+Q3</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q1+Q2+Q3]</local-name>
+            <parent-name>[CF All]</parent-name>
+            <remote-alias>Q1+Q2+Q3</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[CF All_69DC3DD613324B9992F7F81992A163CB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Grouping- change in cash' datatype='string' name='[Calculation_1554304830502363136]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Line Item] = &quot;Net increase (decrease) in cash, cash equivalents&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Cash, cash equivalents and restricted cash at beg of period&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Cash, cash equivalents and restricted cash at end of period&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Net income&quot; THEN &quot;keep&quot;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Grouping- CFO,CFI,CFF' datatype='string' name='[Calculation_1554304830504095745]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF  [Line Item] = &quot;Net cash provided by (used in) financing&quot; THEN &quot;CFF&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Net cash provided by operating activities&quot; THEN &quot;CFO&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Net cash used in investing activities&quot; THEN &quot;CFI&quot;&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Grouping - Rest' datatype='string' name='[Calculation_1554304830504550402]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Line Item] = &quot;Additions to content assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Change in content liabilities&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Amortization of content assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Depreciation and amortization of property,&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Stock-based compensation expense&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Foreign currency remeasurement loss (gain) on debt&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Other non-cash items&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Other current assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Stock-based compensation expense&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Accrued expenses and other liabilities&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Deferred revenue&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Other non-current assets and liabilities&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Purchases of property and equipment&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Change in other assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Repayments of debt&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Proceeds from issuance of common stock&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Repurchases of common stock&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Effect of exchange rate changes on cash, cash&quot; THEN &quot;keep&quot;&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Attach Label to Groups' datatype='string' name='[Calculation_1554304830504722435]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 1 1]&#13;&#10;&#13;&#10;WHEN  &quot;Line Items&quot; THEN [Calculation_1554304830504550402] &#13;&#10;WHEN &quot;Change in cash&quot; THEN [Calculation_1554304830502363136]&#13;&#10;WHEN &quot;CFI, CFO, CFF&quot; THEN [Calculation_1554304830504095745]&#13;&#10;&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Cash Flow Type.' datatype='string' name='[Calculation_2262495871954468864]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IFNULL([Cash Flow Type],&quot;N.A.&quot;)' />
+      </column>
+      <column datatype='string' name='[Cash Flow Type]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Line Item]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Op vs Nonop Cash Flows]' role='dimension' type='nominal' />
+      <column datatype='integer' hidden='true' name='[Q1+Q2+Q3]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='CF All' datatype='table' name='[__tableau_internal_object_id__].[CF All_69DC3DD613324B9992F7F81992A163CB]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_2262495871954468864]' derivation='None' name='[none:Calculation_2262495871954468864:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Cash Flow Type]' derivation='None' name='[none:Cash Flow Type:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Line Item]' derivation='None' name='[none:Line Item:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Op vs Nonop Cash Flows]' derivation='None' name='[none:Op vs Nonop Cash Flows:nk]' pivot='key' type='nominal' />
+      <group hidden='true' name='[Exclusions (Cash Flow Type,Line Item)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Cash Flow Type:nk]' />
+          <groupfilter function='level-members' level='[none:Line Item:nk]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Op vs Nonop Cash Flows:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Non Operating Activities&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Operating Activities&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Line Item:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Deferred revenue&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Cash, cash equivalents and restricted cash at beg of period&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Net cash provided by (used in) financing&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Net increase (decrease) in cash, cash equivalents&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Other current assets&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Depreciation and amortization of property,&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Additions to content assets&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Purchases of property and equipment&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Stock-based compensation expense&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Net cash used in investing activities&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Proceeds from issuance of common stock&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Amortization of content assets&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Other non-cash items&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Other non-current assets and liabilities&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Repurchases of common stock&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Change in other assets&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Net income&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Net cash provided by operating activities&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Change in content liabilities&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Cash, cash equivalents and restricted cash at end of period&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Repayments of debt&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Foreign currency remeasurement loss (gain) on debt&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Accrued expenses and other liabilities&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Cash Flow Type:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;CFI&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;CFF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;CFO&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_2262495871954468864:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Cash, cash equivalents and restricted cash at beg of period&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;N.A.&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;CFO&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Net increase (decrease) in cash, cash equivalents&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;CFI&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Net income&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;CFF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Cash, cash equivalents and restricted cash at end of period&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Change in Cash' caption='Groups' datatype='string' name='[Parameter 1 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Change in cash&quot;'>
+          <calculation class='tableau' formula='&quot;Change in cash&quot;' />
+          <aliases>
+            <alias key='&quot;Change in cash&quot;' value='Change in Cash' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='CF All' id='CF All_69DC3DD613324B9992F7F81992A163CB'>
+            <properties context=''>
+              <relation connection='excel-direct.1iy83bs1rxpj2m0zwo5j70rwk86b' name='CF All' table='[&apos;CF All$&apos;]' type='table'>
+                <columns gridOrigin='A1:I27:no:A1:I27:0' header='yes' outcome='2'>
+                  <column datatype='string' name='Op vs Nonop Cash Flows' ordinal='0' />
+                  <column datatype='string' name='Cash Flow Type' ordinal='1' />
+                  <column datatype='string' name='Line Item' ordinal='2' />
+                  <column datatype='integer' name='Q4' ordinal='3' />
+                  <column datatype='integer' name='Q3' ordinal='4' />
+                  <column datatype='integer' name='Q2' ordinal='5' />
+                  <column datatype='integer' name='Q1' ordinal='6' />
+                  <column datatype='integer' name='Full Year' ordinal='7' />
+                  <column datatype='integer' name='Q1+Q2+Q3' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <edit-parameter-action caption='Set Parameter' name='[Action1_188F98AF48E44DF8A51268F8A5CDC27D]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Balance Sheet' />
+      <agg-type type='average' />
+      <_.fcp.ParameterActionClearSelection.true...clear-option type='do-nothing' value='i:1' />
+      <params>
+        <param name='source-field' value='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[avg:Calculation_2227311498035593217:qk]' />
+        <param name='target-parameter' value='[Parameters].[Parameter 1]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='Balance Sheet'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Balance Sheet and Liquidity Overview</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Chart Features</run>
+            <run>
+The tree map shows the size of the account while the color shows the percent change in the account. Click the map to change the drill down level. When viewing drill down level 1 or 2, the color of the box will present the median value within the category.
+
+</run>
+            <run bold='true' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run>
+The map presents the liquidity position and financial leverage of the firm and draws the reader&apos;s attention to accounts that have experienced dramatic percentage changes. 
+
+The map shows substantial decreases in the cash accounts of the firm, modest decreases in the larger long-term debt account, and slight reduction  in short term liabilities, suggesting that the cash might have been used to satisfy principal repayment or to call outstanding debt. The interest rate on the called debt can be used as a ceiling for the return management expects it can produce.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='BS ALL  (Power Bi Deposit 2)' name='federated.1xy0ikj1pvf15s1chgwza1hohobx' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Drill Down Level' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+              <range max='3' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1xy0ikj1pvf15s1chgwza1hohobx'>
+            <column caption='Drill Down Labels' datatype='string' name='[Calculation_2227311498033311744]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] =1 THEN [Type]&#13;&#10;ELSEIF   [Parameters].[Parameter 1] = 2 THEN  [Type Specific]&#13;&#10;ELSEIF  [Parameters].[Parameter 1] = 3 THEN [Line Item]&#13;&#10;END' />
+            </column>
+            <column caption='Drill Down Calc' datatype='integer' name='[Calculation_2227311498035593217]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1]= 1 THEN 2 &#13;&#10;ELSEIF [Parameters].[Parameter 1]= 2 THEN 3 &#13;&#10;ELSEIF [Parameters].[Parameter 1] =3 THEN 1&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Line Item]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Percentage Change over 2021]' role='measure' type='quantitative' />
+            <column caption='Q4 2021' datatype='integer' name='[Q4 2022]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Type Specific]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_2227311498035593217]' derivation='Avg' name='[avg:Calculation_2227311498035593217:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Percentage Change over 2021]' derivation='Median' name='[med:Percentage Change over 2021:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2227311498033311744]' derivation='None' name='[none:Calculation_2227311498033311744:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Type]' derivation='None' name='[none:Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Q4 2022]' derivation='Sum' name='[sum:Q4 2022:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' center='0.0' field='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[med:Percentage Change over 2021:qk]' max='0.59999999999999998' min='-0.29999999999999999' symmetric='false' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-diverging'>
+                <color>#9e3d22</color>
+                <color>#ad4523</color>
+                <color>#bc4d23</color>
+                <color>#cb5522</color>
+                <color>#d95e21</color>
+                <color>#e76820</color>
+                <color>#ee7725</color>
+                <color>#f58a30</color>
+                <color>#fa9e3f</color>
+                <color>#fdb053</color>
+                <color>#ffc171</color>
+                <color>#d9d5c9</color>
+                <color>#bacdba</color>
+                <color>#9dc19d</color>
+                <color>#83b583</color>
+                <color>#6ba96b</color>
+                <color>#559d55</color>
+                <color>#419141</color>
+                <color>#308530</color>
+                <color>#217921</color>
+                <color>#136d13</color>
+                <color>#086108</color>
+                <color>#005500</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[sum:Q4 2022:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[sum:Q4 2022:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[sum:Q4 2022:qk]' value='false' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[med:Percentage Change over 2021:qk]' value='Line Item Percentage Change'>
+              <formatted-text>
+                <run>Line Item Percentage Change</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[sum:Q4 2022:qk]' value='Line Item Size'>
+              <formatted-text>
+                <run>Line Item Size</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[med:Percentage Change over 2021:qk]' />
+              <size column='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[sum:Q4 2022:qk]' />
+              <lod column='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[avg:Calculation_2227311498035593217:qk]' />
+              <text column='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Type:nk]' />
+              <text column='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Calculation_2227311498033311744:nk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Calculation_2227311498033311744:nk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-family' value='Tableau Medium' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C10A37F0-2E2C-4B9D-A114-96BE5288728C}' />
+    </worksheet>
+    <worksheet name='Cash Flows'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Cash Flow Metrics</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Chart Features:</run>
+            <run>
+This chart shows changes to cash flows items for different groups which can be toggled on the right, under &quot;Groups.&quot; The filter &quot;Filter Outliers&quot; should be used when viewing the &quot;Line Items&quot; group to remove outliers.
+
+</run>
+            <run bold='true' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run>
+The firm is making large investestments that are being funded in part by issuing debt and in part by positive cash flows from operations. 
+
+Concerningly, after filtering out outliers from the &quot;Line Items&quot; group using the sliding &quot;Filter Outliers&quot; filter, management is buying back a substantial amount of stock. The analyst can use the inverse of the price to earnings ratio as a ceiling of management&apos;s perception of the return it can produce.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='CF All (Power Bi Deposit 2)' name='federated.0qfzd0f0z0kvgi111k6191wwzhvq' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Change in Cash' caption='Groups' datatype='string' name='[Parameter 1 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Change in cash&quot;'>
+              <calculation class='tableau' formula='&quot;Change in cash&quot;' />
+              <aliases>
+                <alias key='&quot;Change in cash&quot;' value='Change in Cash' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0qfzd0f0z0kvgi111k6191wwzhvq'>
+            <column caption='Grouping- change in cash' datatype='string' name='[Calculation_1554304830502363136]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Line Item] = &quot;Net increase (decrease) in cash, cash equivalents&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Cash, cash equivalents and restricted cash at beg of period&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Cash, cash equivalents and restricted cash at end of period&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Net income&quot; THEN &quot;keep&quot;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Grouping- CFO,CFI,CFF' datatype='string' name='[Calculation_1554304830504095745]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF  [Line Item] = &quot;Net cash provided by (used in) financing&quot; THEN &quot;CFF&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Net cash provided by operating activities&quot; THEN &quot;CFO&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Net cash used in investing activities&quot; THEN &quot;CFI&quot;&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Grouping - Rest' datatype='string' name='[Calculation_1554304830504550402]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Line Item] = &quot;Additions to content assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Change in content liabilities&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Amortization of content assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Depreciation and amortization of property,&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Stock-based compensation expense&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Foreign currency remeasurement loss (gain) on debt&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Other non-cash items&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Other current assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Stock-based compensation expense&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Accrued expenses and other liabilities&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Deferred revenue&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Other non-current assets and liabilities&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Purchases of property and equipment&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Change in other assets&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Repayments of debt&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Proceeds from issuance of common stock&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Repurchases of common stock&quot; THEN &quot;keep&quot;&#13;&#10;ELSEIF [Line Item] = &quot;Effect of exchange rate changes on cash, cash&quot; THEN &quot;keep&quot;&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Attach Label to Groups' datatype='string' name='[Calculation_1554304830504722435]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1 1]&#13;&#10;&#13;&#10;WHEN  &quot;Line Items&quot; THEN [Calculation_1554304830504550402] &#13;&#10;WHEN &quot;Change in cash&quot; THEN [Calculation_1554304830502363136]&#13;&#10;WHEN &quot;CFI, CFO, CFF&quot; THEN [Calculation_1554304830504095745]&#13;&#10;&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Cash Flow Type.' datatype='string' name='[Calculation_2262495871954468864]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IFNULL([Cash Flow Type],&quot;N.A.&quot;)' />
+            </column>
+            <column datatype='string' name='[Cash Flow Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Full Year]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Line Item]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Q1]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Q2]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Q3]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Q4]' role='measure' type='quantitative' />
+            <column-instance column='[Line Item]' derivation='Attribute' name='[attr:Line Item:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1554304830504722435]' derivation='None' name='[none:Calculation_1554304830504722435:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2262495871954468864]' derivation='None' name='[none:Calculation_2262495871954468864:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Cash Flow Type]' derivation='None' name='[none:Cash Flow Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Line Item]' derivation='None' name='[none:Line Item:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Full Year]' derivation='Sum' name='[sum:Full Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Q1]' derivation='Sum' name='[sum:Q1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Q2]' derivation='Sum' name='[sum:Q2:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Q3]' derivation='Sum' name='[sum:Q3:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Q4]' derivation='Sum' name='[sum:Q4:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[Exclusions (Cash Flow Type,Line Item)]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='level-members' level='[none:Cash Flow Type:nk]' />
+                <groupfilter function='level-members' level='[none:Line Item:nk]' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[none:Cash Flow Type:nk]' member='%null%' />
+                <groupfilter function='member' level='[none:Line Item:nk]' member='&quot;Effect of exchange rate changes on cash, cash&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_1554304830504722435:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Calculation_1554304830504722435:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Calculation_1554304830504722435:nk]' member='%null%' />
+                <groupfilter function='member' level='[none:Calculation_1554304830504722435:nk]' member='%null%' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Line Item:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Stock-based compensation expense&quot;</bucket>
+              <bucket>&quot;Accrued expenses and other liabilities&quot;</bucket>
+              <bucket>&quot;Additions to content assets&quot;</bucket>
+              <bucket>&quot;Amortization of content assets&quot;</bucket>
+              <bucket>&quot;Change in content liabilities&quot;</bucket>
+              <bucket>&quot;Deferred revenue&quot;</bucket>
+              <bucket>&quot;Depreciation and amortization of property,&quot;</bucket>
+              <bucket>&quot;Foreign currency remeasurement loss (gain) on debt&quot;</bucket>
+              <bucket>&quot;Other current assets&quot;</bucket>
+              <bucket>&quot;Other non-cash items&quot;</bucket>
+              <bucket>&quot;Other non-current assets and liabilities&quot;</bucket>
+              <bucket>&quot;Repayments of debt&quot;</bucket>
+              <bucket>&quot;Repurchases of common stock&quot;</bucket>
+              <bucket>&quot;Proceeds from issuance of common stock&quot;</bucket>
+              <bucket>&quot;Purchases of property and equipment&quot;</bucket>
+              <bucket>&quot;Change in other assets&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='quantitative' column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Full Year:qk]' included-values='in-range-or-null'>
+            <min>-14138800</min>
+            <max>7004045</max>
+          </filter>
+          <slices>
+            <column>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_1554304830504722435:nk]</column>
+            <column>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[Exclusions (Cash Flow Type,Line Item)]</column>
+            <column>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Full Year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Line Item:nk]' value='139' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Line Item:nk]' value='true' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q2:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='in-tooltip' field='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Line Item:nk]' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Full Year:qk]' value='Filter Outliers&#10;'>
+              <formatted-text>
+                <run>Filter Outliers&#10;</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_2262495871954468864:nk]' />
+              <tooltip column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[attr:Line Item:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q1:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_2262495871954468864:nk]' />
+              <tooltip column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[attr:Line Item:nk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q2:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_2262495871954468864:nk]' />
+              <tooltip column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[attr:Line Item:nk]' />
+            </encodings>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q3:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_2262495871954468864:nk]' />
+              <tooltip column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[attr:Line Item:nk]' />
+            </encodings>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q4:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_2262495871954468864:nk]' />
+              <tooltip column='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[attr:Line Item:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q1:qk] + ([federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q2:qk] + ([federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q3:qk] + [federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Q4:qk])))</rows>
+        <cols>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Line Item:nk]</cols>
+      </table>
+      <simple-id uuid='{1BA4FC9C-5065-457E-A381-55725055CC9A}' />
+    </worksheet>
+    <worksheet name='Debt Evalution'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Debt Analysis and Management Expectations</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Chart Features: </run>
+            <run>
+The y-axis shows the year and quarter of the bond&apos;s maturity. The x-axis shows bond&apos;s year and quarter of issuance. The color of the square shows the stated interest rate of the bond in excess of an investment grade bond issued at  the same time (the darker the blue the higher the premium). The size of the square represents the fair value of the bond. 
+
+</run>
+            <run bold='true' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run>
+Bonds issued at a premium return a higher percentage of their cash flows earlier than bonds issued at par or at a discount. Analysts can use the premium or discount of a bond as an indicator for mangement expectations about future cash flows. High premium bonds are an indication of strong management confidence in high near term cash flows. And changes towards greater discountedness in the bonds issued signal less confidence in near-term cash flows. 
+
+Analysts can use the size of the nearly mature debt as well as changes to interest rate since that debt was issued to project the impact on interets expense and bonds payable in upcoming quarters. Changes in the color of the square signal a shift in management&apos;s perception of near-term cash flows. We can see with the outbreak of COVID at the end of 2019 that there is a sudden lightening of the square as management bcesomes more concerned about near-term cash flows and opts for bonds closer to par which reuslt in lower cash outflows in the near term.
+
+</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Maturity of Debt (Power Bi Deposit 2)' name='federated.1r40dkf0kkz08u17e3gss14e8nuc' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1r40dkf0kkz08u17e3gss14e8nuc'>
+            <column datatype='real' name='[BBB US Corporate Effective Yield]' role='measure' type='quantitative' />
+            <column caption='Stated - BBB' datatype='real' name='[Calculation_1138847765996351488]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Stated Interest]-[BBB US Corporate Effective Yield]' />
+            </column>
+            <column datatype='integer' name='[Fair Value]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Issuance]' role='dimension' type='ordinal' />
+            <column datatype='date' name='[Maturity]' role='dimension' type='ordinal' />
+            <column datatype='real' name='[Stated Interest]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1138847765996351488]' derivation='Avg' name='[avg:Calculation_1138847765996351488:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Fair Value]' derivation='Avg' name='[avg:Fair Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Issuance]' derivation='Quarter' name='[qr:Issuance:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Maturity]' derivation='Quarter' name='[qr:Maturity:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Issuance]' derivation='Year' name='[yr:Issuance:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Maturity]' derivation='Year' name='[yr:Maturity:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1r40dkf0kkz08u17e3gss14e8nuc].[yr:Issuance:ok]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[yr:Issuance:ok]' />
+              <groupfilter function='member' level='[yr:Issuance:ok]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1r40dkf0kkz08u17e3gss14e8nuc].[yr:Issuance:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1r40dkf0kkz08u17e3gss14e8nuc].[avg:Calculation_1138847765996351488:qk]' />
+              <size column='[federated.1r40dkf0kkz08u17e3gss14e8nuc].[avg:Fair Value:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1r40dkf0kkz08u17e3gss14e8nuc].[yr:Maturity:ok] / [federated.1r40dkf0kkz08u17e3gss14e8nuc].[qr:Maturity:ok])</rows>
+        <cols>([federated.1r40dkf0kkz08u17e3gss14e8nuc].[yr:Issuance:ok] / [federated.1r40dkf0kkz08u17e3gss14e8nuc].[qr:Issuance:ok])</cols>
+      </table>
+      <simple-id uuid='{EA836EBA-DFC9-4CDF-B9E2-AFED244B1BFC}' />
+    </worksheet>
+    <worksheet name='Membership'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Variance</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Chart Characteristics:</run>
+            <run>
+This chart  toggles the parameters: revenues, paid net memberships additions, and paid memberships using the filter &quot;Select Measure Parameter.&quot; The x-axis details the region. The color of the circle details the quarter over quarter revenue growth regardless ofthe parameter selected. 
+
+</run>
+            <run bold='true' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run>
+The length of the candlestick relative to the distance of the candlestick from the x-axis presents a visual representation of the standard deviation of the parameter. Cycling through the parameters, one can see that while EMEA and UCAN are the largest regions in terms of revenues and membership, they are not the centers of membership growth.
+
+When the paid net membership parameter is selected, the shading of the circles (quarterly revenue growth) contextualizes the revenue growth. Negative quarterly revenue growth is often associated with the greatest increases in paid net membership. This indicates consumers are price sensative and that the firm has little pricing power, often having to choose between revenues growth and profitability.
+
+
+
+</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Membership (Power Bi Deposit 2)' name='federated.1g4hxt40dm5rme15f4d6i1bhi99u' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Measure Parameter' datatype='string' name='[Parameter 1 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Paid net membership additions&quot;'>
+              <calculation class='tableau' formula='&quot;Paid net membership additions&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1g4hxt40dm5rme15f4d6i1bhi99u'>
+            <column caption='Select Measure' datatype='integer' name='[Calculation_1968917470894698496]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1 2]&#13;&#10;&#13;&#10;WHEN &quot;Revenues&quot; THEN SUM([Revenues])&#13;&#10;WHEN  &quot;Paid net membership additions&quot; THEN sum([Paid net membership additions])&#13;&#10;WHEN &quot;Paid memberships at end of period&quot;  THEN SUM([Paid memberships at end of period])&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column datatype='integer' name='[Paid memberships at end of period]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Paid net membership additions]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Q/Q Rev Growth]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Revenues]' role='measure' type='quantitative' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Q/Q Rev Growth]' derivation='Sum' name='[sum:Q/Q Rev Growth:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1968917470894698496]' derivation='User' name='[usr:Calculation_1968917470894698496:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[none:Region:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' scope='rows' value='true' />
+            <format attr='auto-subtitle' class='0' field='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' scope='rows' value='false' />
+            <format attr='title' class='0' field='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[none:Region:nk]' value='153' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[sum:Q/Q Rev Growth:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.14193369448184967' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[usr:Calculation_1968917470894698496:qk]</rows>
+        <cols>[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[none:Region:nk]</cols>
+      </table>
+      <simple-id uuid='{D8FD319C-14FB-413E-BD1E-2E6C18A4D1EF}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Story 1' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Netflix, Inc.&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='story-description'>
+          <format attr='background-color' id='story-description_6' value='#00000000' />
+          <format attr='border-width' id='story-description_6' value='0' />
+          <format attr='border-style' id='story-description_6' value='none' />
+          <format attr='border-width' id='story-description_7' value='0' />
+          <format attr='border-style' id='story-description_7' value='none' />
+          <format attr='background-color' id='story-description_7' value='#00000000' />
+          <format attr='background-color' id='story-description_13' value='#00000000' />
+          <format attr='border-width' id='story-description_13' value='0' />
+          <format attr='border-style' id='story-description_13' value='none' />
+          <format attr='background-color' id='story-description_14' value='#00000000' />
+          <format attr='border-width' id='story-description_14' value='0' />
+          <format attr='border-style' id='story-description_14' value='none' />
+        </style-rule>
+      </style>
+      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98340' id='24' param='vert' removable='false' type-v2='layout-flow' w='98426' x='787' y='830'>
+            <zone h='4253' id='25' type-v2='title' w='98426' x='787' y='830'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='94087' id='22' param='vert' removable='false' type-v2='layout-flow' w='98426' x='787' y='5083'>
+              <zone h='94087' id='1' param='vert' removable='false' type-v2='layout-flow' w='98426' x='787' y='5083'>
+                <zone fixed-size='89' h='9232' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='5083' />
+                <zone h='84855' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='14315'>
+                  <flipboard active-id='2' nav-type='caption' show-nav-arrows='true'>
+                    <story-points>
+                      <story-point caption='Balance Sheet Analysis' captured-sheet='Balance Sheet' id='2'>
+                        <currentDeltas />
+                        <capturedDeltas>
+                          <datasource name='Parameters'>
+                            <column name='[Parameter 1]' value='3' />
+                          </datasource>
+                        </capturedDeltas>
+                      </story-point>
+                      <story-point caption='Cash Flows Analysis' captured-sheet='Cash Flows' id='3'>
+                        <capturedDeltas>
+                          <datasource name='Parameters'>
+                            <column alias='Change in Cash' name='[Parameter 1 1]' value='&quot;Change in cash&quot;' />
+                          </datasource>
+                        </capturedDeltas>
+                      </story-point>
+                      <story-point caption='Debt Analysis' captured-sheet='Debt Evalution' id='1' />
+                      <story-point caption='Membership Analysis' captured-sheet='Membership' id='4' />
+                    </story-points>
+                  </flipboard>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='37241' hidden='true' id='6' story-point-id='1' type-v2='text' w='74409' x='2362' y='46680'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Chart Features: </run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>The y-axis shows the year and quarter of the bond&apos;s maturity. The x-axis shows bond&apos;s year and quarter of issuance. The color of the square shows the stated interest rate of the bond in excess of an investment grade bond issued at  the same time (the darker the blue the higher the premium). The size of the square represents the fair value of the bond. </run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>Bonds issued at a premium return a higher percentage of their cash flows earlier than bonds issued at par or at a discount. Analysts can use the premium or discount of a bond as an indicator for mangement expectations about future cash flows. High premium bonds are an indication of strong management confidence in high near term cash flows. And changes towards greater discountedness in the bonds issued signal less confidence in near-term cash flows. </run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>Analysts can use the size of the nearly mature debt as well as changes to interest rate since that debt was issued to project the impact on interets expense and bonds payable in upcoming quarters. Changes in the color of the square signal a shift in management&apos;s perception of near-term cash flows. We can see with the outbreak of COVID at the end of 2019 that there is a sudden lightening of the square as management bcesomes more concerned about near-term cash flows and opts for bonds closer to par which reuslt in lower cash outflows in the near term.</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='26349' id='7' story-point-id='2' type-v2='text' w='78839' x='3543' y='69295'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Chart Features:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>The tree map shows the size of the account while the color shows the percent change in the account. Click the map to change the drill down level. When viewing drill down level 1 or 2, the color of the box will present the median value within the category.</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>The map presents the liquidity position and financial leverage of the firm and draws the reader&apos;s attention to accounts that have experienced dramatic percentage changes. </run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>The map shows substantial decreases in the cash accounts of the firm, modest decreases in the larger long-term debt account, and slight reduction  in short term liabilities, suggesting that the cash might have been used to satisfy principal repayment or to call outstanding debt. The interest rate on the called debt can be used as a ceiling for the return management expects it can produce.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='61826' hidden='true' id='13' story-point-id='3' type-v2='text' w='15256' x='83169' y='37656'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Chart Features:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>This chart shows changes to cash flows items for different groups which can be toggled on the right, under &quot;Groups.&quot; The filter &quot;Filter Outliers&quot; should be used when viewing the &quot;Line Items&quot; group to remove outliers.</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>The firm is making large investestments that are being funded in part by issuing debt and in part by positive cash flows from operations. </run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>Concerningly, after filtering out outliers from the &quot;Line Items&quot; group using the sliding &quot;Filter Outliers&quot; filter, management is buying back a substantial amount of stock. The analyst can use the inverse of the price to earnings ratio as a ceiling of management&apos;s perception of the return it can produce.</run>
+          </formatted-text>
+        </zone>
+        <zone flipboard-zone-id='5' forceUpdate='true' h='63485' hidden='true' id='14' story-point-id='4' type-v2='text' w='28839' x='70079' y='26971'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Chart Characteristics:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>This chart  toggles the parameters: revenues, paid net memberships additions, and paid memberships using the filter &quot;Select Measure Parameter.&quot; The x-axis details the region. The color of the circle details the quarter over quarter revenue growth regardless ofthe parameter selected. </run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run bold='true' fontalignment='0' fontcolor='#666666' fontsize='10'>Decision Usefulness and Application Example:</run>
+            <run fontalignment='0'>Æ&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>The length of the candlestick relative to the distance of the candlestick from the x-axis presents a visual representation of the standard deviation of the parameter. Cycling through the parameters, one can see that while EMEA and UCAN are the largest regions in terms of revenues and membership, they are not the centers of membership growth.</run>
+            <run fontalignment='0'>Æ&#10;&#10;</run>
+            <run fontalignment='0' fontcolor='#666666' fontsize='9'>When the paid net membership parameter is selected, the shading of the circles (quarterly revenue growth) contextualizes the revenue growth. Negative quarterly revenue growth is often associated with the greatest increases in paid net membership. This indicates consumers are price sensative and that the firm has little pricing power, often having to choose between revenues growth and profitability.</run>
+            <run fontalignment='0'>Æ&#10;&#10;&#10;&#10;</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid='{4B43CF46-38AB-41E9-9A01-D2F67CDD84E3}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='93'>
+    <window class='dashboard' maximized='true' name='Story 1'>
+      <viewpoints />
+      <active id='5' />
+      <simple-id uuid='{76731F32-460A-4A6B-830C-440DD4BB0B57}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Balance Sheet'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.1xy0ikj1pvf15s1chgwza1hohobx].[med:Percentage Change over 2021:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='173'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1xy0ikj1pvf15s1chgwza1hohobx].[med:Percentage Change over 2021:qk]</field>
+            <field>[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Calculation_2227311498033311744:nk]</field>
+            <field>[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Calculation_2227311498041421826:nk]</field>
+            <field>[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Line Item:nk]</field>
+            <field>[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Liquidity Number:ok]</field>
+            <field>[federated.1xy0ikj1pvf15s1chgwza1hohobx].[none:Type:nk]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+      <simple-id uuid='{F3FC438E-2A7A-4782-A202-6CC919C5B970}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Cash Flows'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='filters' />
+            <card type='marks' />
+            <card type='pages' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[sum:Full Year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 1 1]' type='parameter' />
+            <card pane-specification-id='1' param='[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_2262495871954468864:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='156'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[:Measure Names]</field>
+            <field>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[Line Item (group)]</field>
+            <field>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Calculation_1554304830504722435:nk]</field>
+            <field>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Line Item:nk]</field>
+            <field>[federated.0qfzd0f0z0kvgi111k6191wwzhvq].[none:Op vs Nonop Cash Flows:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AB802B2A-28D2-4639-8163-44848EA7F318}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Debt Evalution'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1r40dkf0kkz08u17e3gss14e8nuc].[avg:Calculation_1138847765996351488:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1r40dkf0kkz08u17e3gss14e8nuc].[avg:Fair Value:qk]' type='size' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='300'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1r40dkf0kkz08u17e3gss14e8nuc].[avg:Calculation_1138847765996351488:qk]</field>
+            <field>[federated.1r40dkf0kkz08u17e3gss14e8nuc].[yr:Issuance:ok]</field>
+            <field>[federated.1r40dkf0kkz08u17e3gss14e8nuc].[yr:Maturity:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{20CBCA09-7570-47B7-B513-6E5056B8A1D8}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Membership'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1 2]' size='27' type='parameter' />
+            <card pane-specification-id='0' param='[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[sum:Q/Q Rev Growth:qk]' size='40' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='260'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 1 2]</field>
+            <field>[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[none:Calculation_1968917470917447682:nk]</field>
+            <field>[federated.1g4hxt40dm5rme15f4d6i1bhi99u].[none:Region:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8777701F-3CC5-4074-91AB-D3581F9A85C5}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Story 1' width='384'>
+      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
+      QgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQ
+      QgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQQgiFkgAQ
+      QgiFkgAQQgiFkgAQQgiFkgAQQgFyrr2D4jvnU3znfHKuvm2v+ennfwNteu5e09POvZrcb/xi
+      1PqRmJHNmb98lAv//BIpY0u/dNl5/1kzau2KfdMe7w4IIY4+++ZFxGXmEw2HsG9ZjK5sJpkX
+      fxN346d4mivJve5n6KfOxfLu30mZfj668RU4dqxArY1HHZ84av2Y/YvfY+9sofm9lwh53JRd
+      dROZ5RX0blyBtWEnU278MQB1C/9JnD6FqTfdhkqjpe7lf4xaH8Tn5AxACAUImDoJDVkIDZoI
+      mLsZe/sTOD5dTva8H6FNySDsHMTT9Clhl42wy4bf3EnBdx8c9X5kT51J8zvPY2trwGs1E3DY
+      cBo6OeOOBym+4AoyJp7GYGMVKrUaVODobmfSdd9Dk6Ab9b4ICQAhlEelQq1Lxlm1loCpA5U2
+      jrDbjq+niWg4RO43fk40FEQdlzDqTXssfWRMnAZAXHIa0773cyKhIJr4BLrXLsVav5PpP/g/
+      9PlFEI3Su34ZQbcLlVo16n0REgBCKEaU6Gf/iGLfsoSyPy4mLqsQT+suvO01jL3jn+jGnYY6
+      QU/y1LP3LjcKds7/I3Pu+iNXvrqO7Kmno9XpyTt9uK2icy8hp2I20UiESDA4oufi6FBFo9GD
+      3roL1i04mn0RJ6n8tHyMTiMd1o7j3RVF+VZmBar59x92eY0+jbDHAZ/tAtSJeiI+N6p4HURC
+      REPBA9SwN/2Us+gYBEvV1i9vOyGRsN+HJkFHNBKK7fC1iUlEwiEiwcBBt3nxY6+Qe/pctjdv
+      Z8g1dMh9VjK5CCyEQoXd9hGvIz43ANGA9+i37fd99vfItkI+z1FvW3xOhoCEEEKhJACEECek
+      5MJiNPGjfyFafE4CQAhxUPK/cz/xBeOPWXtz7vzDAW8WE0dGrgEIcYpKP/96sq/4IfYtS0gc
+      W45xwf3k33Qvlnf+wZgf/QlfVz2RoB+NPo34vGIM8/+PotseRx2fSO8zvyL3up+hSU5Hm5qN
+      +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
+      Hv2IaSEAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
